@@ -13,8 +13,9 @@ namespace RestWcfService.Service
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class Service1 : IService1
     {
-        public void DoWork()
+        public String DoWork()
         {
+            return "Hello REST WCF Service :)";
         }
     }
 }

@@ -13,7 +13,7 @@ namespace RestWcfService.Service
     public interface IService1
     {
         [OperationContract]
-        [WebInvoke(Method = "Get", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare, UriTemplate = "DoWork")]
-        void DoWork();
+        [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare, UriTemplate = "DoWork")]
+        String DoWork();
     }
 }
