@@ -4,8 +4,15 @@
 
     <div class="jumbotron">
         <button onclick=" doWork(); return false;">DoWork</button>
+        <br />
+        <br />
         <input type="text" id="squareValue" />
         <button onclick=" doSquare(); return false;">DoSquare</button>
+        <br />
+        <br />
+        <input type="text" id="value1" />
+        <input type="text" id="value2" />
+        <button onclick=" doAddValues(); return false;">DoAddValues</button>
         
     </div>
 
@@ -36,6 +43,27 @@
                 contentType: "application/json",
                 success: function (result) {
                     console.info(result);
+                }
+            });
+        }
+
+        function doAddValues() {
+            var values = {
+                'Value1': $('#value1').val(),
+                'Value2': $('#value2').val()
+            };
+
+            $.ajax({
+                url: "Service/Service1.svc/DoAddValues", //folder/service_file/Uri
+                type: "POST",
+                data: JSON.stringify(values),
+                dataType: "json",
+                contentType: "application/json",
+                success: function (result) {
+                    console.info(result);
+                },
+                error: function (error) {
+                    console.error(error);
                 }
             });
         }

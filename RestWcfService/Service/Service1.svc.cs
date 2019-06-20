@@ -22,5 +22,27 @@ namespace RestWcfService.Service
         {
             return value * value;
         }
+
+        public int DoAddValues(AddValues values)
+        {
+            return values.Value1 + values.Value2;
+        }
+    }
+
+
+    [DataContract]
+    public class AddValues
+    {
+        [DataMember]
+        public int Value1 { get; set; }
+        [DataMember]
+        public int Value2 { get; set; }
+
+        
+        public AddValues()
+        {
+            Value1 = 0;
+            Value2 = 0;
+        }
     }
 }
