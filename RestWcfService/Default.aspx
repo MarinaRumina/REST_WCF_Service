@@ -4,7 +4,9 @@
 
     <div class="jumbotron">
         <button onclick=" doWork(); return false;">DoWork</button>
+        <input type="text" id="squareValue" />
         <button onclick=" doSquare(); return false;">DoSquare</button>
+        
     </div>
 
 
@@ -24,7 +26,7 @@
         }
 
         function doSquare() {
-            var value = 2;
+            var value = $('#squareValue').val();
 
             $.ajax({
                 url: "Service/Service1.svc/DoSquare", //folder/service_file/Uri
